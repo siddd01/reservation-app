@@ -2,7 +2,8 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
 import { dbConnection } from "./database/dbconnection.js"
-import reservationRouter from "./routes/reservationRoute.js"
+import reservationRoute from './routes/reservationRoute.js'
+
 const app=express()
 
 //to accesss the .env
@@ -16,8 +17,12 @@ app.use(
 )
 
 app.use(express.json()) // string to json obj
+
+
 app.use(express.urlencoded({extended:true}))
-app.use("/api/v1/reservation",reservationRouter)
+
+
+app.use("/api/v1/reservation",reservationRoute)
 
 dbConnection()
 export default app

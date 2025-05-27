@@ -2,7 +2,7 @@ import ErrorHandler from "../middlewares/error.js";
 import { Reservation } from "../models/reservationSchema.js";
 
 export const sendReservation =async (req,res,next)=>{
-    const { firstName, lastName, date, time,email, phone } = req.body;
+     const { firstName, lastName, email, date, time, phone } = req.body ;
   if (!firstName || !lastName || !email || !date || !time || !phone) {
     return next(new ErrorHandler("Please Fill Full Reservation Form!", 400));
   }
