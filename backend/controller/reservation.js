@@ -38,3 +38,47 @@ export const sendReservation =async (req,res,next)=>{
       }
 
     }
+
+
+export const updateReservation = async (req, res) => {
+  try {
+    const { id } = req.params; // ✅ DESTRUCTURE ID PROPERLY
+    const updatedData = req.body;
+
+    const updatedReservation = await Reservation.findByIdAndUpdate(
+      id,
+      updatedData,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
+    if (!updatedReservation) {
+      return res.status(404).json({ message: "Reservation not found" });
+    }
+
+    res.status(200).json(updatedReservation);
+  } catch (error) {
+    console.error("Update Error:", error);
+    return res.status(500).json({ message: "Fail to edit", error });
+  }
+};
+
+
+export const deleteReservation = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await Reservation.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).json({ message: "Reservation not found" });
+    }
+
+    return res.status(200).json({ message: "Reservation deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting reservation:", error);
+    return res.status(500).json({ message: "Failed to delete reservation", error: error.message });
+  }
+};
+
