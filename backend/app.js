@@ -21,7 +21,7 @@ app.use(express.json()) // string to json obj
 
 app.use(express.urlencoded({extended:true}))
 
-
+app.use("/api/v1/users",reservationRoute)
 app.use("/api/v1/reservation",reservationRoute)
 
 dbConnection()

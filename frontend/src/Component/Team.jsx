@@ -1,9 +1,8 @@
 import { data } from "../restApi.json";
-import Navbar from "./Navbar";
 const Team = () => {
   return (
     <>
-    <Navbar/>
+
        <section className="team-section py-16 bg-[#f9f9f9]" id="team">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-12">

@@ -1,9 +1,8 @@
-import Navbar from "./Navbar";
 
 const HeroSection = () => {
   return (
    <>
-   <Navbar/>
+
     <section className="bg-white py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left Content */}

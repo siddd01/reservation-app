@@ -1,15 +1,26 @@
-import Navbar from "../Component/Navbar";
+import HeroSection from "../Component/HeroSection";
+import Menu from "../Component/Menu";
+import Qualities from "../Component/Qualities";
+import WhoAreWe from "../Component/WhoAreWe";
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <div className="p-16">
+
+    <HeroSection />
+ 
+      <hr className="flex-grow border-t-2 border-red-400" />
+<Menu/>
+
+  <hr className="flex-grow border-t-2 border-red-400" />
 
 
-   
+    <Qualities />
 
-      {/* You probably don't need this if you're routing correctly */}
-      {/* <About /> */}
+  <hr className="flex-grow border-t-2 border-red-400" />
+
+
+<WhoAreWe/>
     </div>
   );
 };

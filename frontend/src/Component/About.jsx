@@ -1,11 +1,10 @@
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
 
 const About = () => {
   return (
     <>
-    <Navbar/>
+
        <section id="about" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12">
         

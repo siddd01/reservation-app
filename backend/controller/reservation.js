@@ -25,3 +25,16 @@ export const sendReservation =async (req,res,next)=>{
   }
     }
 
+    export const getAllUser=async (req,res)=>{
+      try{
+        // fetch all reservations
+        const users= await Reservation.find({})
+        res.status(200).json(users)
+      }
+      catch(error){
+        res.status(400).json({
+          message:"failed to fetch error"
+        })
+      }
+
+    }

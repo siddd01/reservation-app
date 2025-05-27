@@ -26,8 +26,14 @@ const Navbar = () => {
             {item.title}
           </div>
         ))}
-        <button className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors">
-          OUR MENU
+        <button onClick={()=>{navigate("/ourReservation")
+           window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'  // optional, for smooth scrolling animation
+            });
+
+        }} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors">
+          OUR RESERVATIONS
         </button>
       </div>
 
